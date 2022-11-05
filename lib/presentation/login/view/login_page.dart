@@ -64,21 +64,21 @@ class LoginPageWidget extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("Еще нет аккаунта?"),
+            const Text("Еще нет аккаунта?"),
             TextButton(
               onPressed: ()  => debugPrint("Создать"),
-              child: Text("Создать"),
+              child: const Text("Создать"),
             ),
           ],
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         TextButton(
           onPressed: () => debugPrint("Не помню пароль"),
-          child: Text("Не помню пароль"),
+          child: const Text("Не помню пароль"),
         ),
         const Expanded(flex: 124, child: SizedBox.expand()),
       ],
