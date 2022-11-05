@@ -10,8 +10,78 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text("Login Page"),
+    return const Scaffold(
+      body: LoginPageWidget(),
+    );
+  }
+}
+
+class LoginPageWidget extends StatelessWidget {
+  const LoginPageWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Expanded(flex: 64, child: SizedBox.expand()),
+        const Center(
+          child: Text(
+            "Вход",
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 24,
+            ),
+          ),
+        ),
+        const Expanded(flex: 88, child: SizedBox.expand()),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 36),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: "Почта",
+            ),
+          ),
+        ),
+        const SizedBox(height: 8),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 36),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: "Пароль",
+            ),
+          ),
+        ),
+        const SizedBox(height: 40),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 36),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () => debugPrint("Login"),
+              child: const Text("Войти"),
+            ),
+          ),
+        ),
+        SizedBox(height: 24),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text("Еще нет аккаунта?"),
+            TextButton(
+              onPressed: ()  => debugPrint("Создать"),
+              child: Text("Создать"),
+            ),
+          ],
+        ),
+        SizedBox(height: 8),
+        TextButton(
+          onPressed: () => debugPrint("Не помню пароль"),
+          child: Text("Не помню пароль"),
+        ),
+        const Expanded(flex: 124, child: SizedBox.expand()),
+      ],
     );
   }
 }
